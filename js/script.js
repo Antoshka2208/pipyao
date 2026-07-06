@@ -496,3 +496,72 @@ finalScreenBtn.addEventListener("click", function () {
     typeFinalMessage();
 
 });
+
+// =========================
+// ФИНАЛ
+// =========================
+
+giftBtn.addEventListener("click", function () {
+
+    // Вибрация (если поддерживается)
+    if (navigator.vibrate) {
+
+        navigator.vibrate([120, 60, 120, 60, 250]);
+
+    }
+
+    giftBtn.style.display = "none";
+
+    document.getElementById("finalCongrats")
+        .classList.add("show");
+
+    createConfetti();
+
+});
+
+function createConfetti() {
+
+    const colors = [
+
+        "#ff4d6d",
+        "#ffd93d",
+        "#6dff7a",
+        "#5bc0ff",
+        "#d66bff",
+        "#ffffff"
+
+    ];
+
+    for (let i = 0; i < 150; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * window.innerWidth + "px";
+
+        piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        piece.style.opacity =
+            Math.random();
+
+        piece.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },6000);
+
+    }
+
+}
