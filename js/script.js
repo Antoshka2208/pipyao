@@ -15,6 +15,7 @@ const screen4 = document.getElementById("screen4");
 const screen5 = document.getElementById("screen5");
 const screen6 = document.getElementById("screen6");
 const screen7 = document.getElementById("screen7");
+const screen8 = document.getElementById("screen8");
 
 // =========================
 // КНОПКИ
@@ -35,10 +36,18 @@ const nextBtn6 = document.getElementById("nextBtn6");
 const codeInput = document.getElementById("codeInput");
 const checkCodeBtn = document.getElementById("checkCodeBtn");
 const codeMessage = document.getElementById("codeMessage");
+const finalText =
+    document.getElementById("finalText");
+
+const giftBtn =
+    document.getElementById("giftBtn");
+
+    const finalScreenBtn =
+    document.getElementById("finalScreenBtn");
 
 // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 // СЮДА ПОТОМ ВПИШЕШЬ СВОЙ СЕКРЕТНЫЙ КОД
-const SECRET_CODE = "LOVE";
+const SECRET_CODE = "Кардибалет";
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 // =========================
@@ -385,8 +394,7 @@ checkCodeBtn.addEventListener("click", function () {
         codeMessage.innerHTML =
             "❤️ Правильно! Последний экран уже ждёт тебя.";
 
-        // Здесь потом будет переход
-        // на финальный экран.
+        finalScreenBtn.style.display = "block";
 
     }
 
@@ -410,5 +418,85 @@ codeInput.addEventListener("keydown", function (e) {
         checkCodeBtn.click();
 
     }
+});
+
+
+const FINAL_MESSAGE =
+`Поздравляю! ❤️
+
+Ты справилась со всеми загадками и дошла до самого конца.
+
+Надеюсь, этот небольшой квест смог подарить тебе улыбку и сделать этот день чуточку интереснее.
+
+Спасибо, что прошла его до конца.
+
+Но это ещё не всё...
+
+На самом деле этот сайт был лишь частью моего подарка.
+
+А теперь тебя ждёт небольшой сюрприз, который я хочу вручить тебе лично. 🎁`;
+
+
+let typingIndex = 0;
+let typingFinished = false;
+
+function typeFinalMessage() {
+
+    if (typingFinished) return;
+
+    finalText.innerHTML = "";
+    giftBtn.classList.remove("show");
+    giftBtn.style.display = "none";
+
+    typingIndex = 0;
+
+    function type() {
+
+        if (typingIndex >= FINAL_MESSAGE.length) {
+
+            typingFinished = true;
+
+            giftBtn.style.display = "inline-block";
+
+            setTimeout(() => {
+
+                giftBtn.classList.add("show");
+
+            }, 300);
+
+            return;
+
+        }
+
+        const char = FINAL_MESSAGE.charAt(typingIndex);
+
+        if (char === "\n") {
+
+            finalText.innerHTML += "<br>";
+
+        } else {
+
+            finalText.innerHTML += char;
+
+        }
+
+        typingIndex++;
+
+        setTimeout(type, 32);
+
+    }
+
+    type();
+
+}
+
+finalScreenBtn.addEventListener("click", function () {
+
+    document.title = "❤️ Финал ❤️";
+
+    screen7.classList.remove("active");
+    screen8.classList.add("active");
+
+    typeFinalMessage();
 
 });
