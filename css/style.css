@@ -1,0 +1,399 @@
+/* ========================= */
+/* СБРОС */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(180deg,#08131f,#111f35);
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+/* ========================= */
+/* НЕБО */
+/* ========================= */
+
+#sky{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+}
+
+.star{
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.3;
+
+    animation:twinkle linear infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+}
+
+/* ========================= */
+/* ЭКРАНЫ */
+/* ========================= */
+
+.screen{
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.active{
+
+    display:flex;
+
+}
+
+/* ========================= */
+/* ТЕКСТ */
+/* ========================= */
+
+h1{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:24px;
+
+    line-height:1.6;
+
+}
+
+/* ========================= */
+/* КНОПКИ */
+/* ========================= */
+
+button{
+
+    margin-top:40px;
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#222;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ========================= */
+/* ЭКРАН 2 */
+/* ========================= */
+
+.buttonBox{
+
+    position:relative;
+
+    width:520px;
+
+    height:90px;
+
+    margin-top:50px;
+
+}
+
+#okBtn{
+
+    position:absolute;
+
+    left:40px;
+
+    top:0;
+
+}
+
+#closeBtn{
+
+    position:absolute;
+
+    left:270px;
+
+    top:0;
+
+    transition:left .25s, top .25s;
+
+}
+
+/* ========================= */
+/* ПОЯВЛЕНИЕ */
+/* ========================= */
+
+.fade{
+
+    opacity:0;
+
+    transition:opacity .8s;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+}
+
+/* ========================= */
+/* ПОДАРОК */
+/* ========================= */
+
+.gift{
+
+    display:inline-block;
+
+    animation:giftMove 2s ease-in-out infinite;
+
+}
+
+@keyframes giftMove{
+
+    0%{
+
+        transform:rotate(-6deg);
+
+    }
+
+    50%{
+
+        transform:rotate(6deg);
+
+    }
+
+    100%{
+
+        transform:rotate(-6deg);
+
+    }
+
+}
+
+/* ========================= */
+/* ЗАГРУЗКА */
+/* ========================= */
+
+.progress{
+
+    width:420px;
+
+    height:24px;
+
+    background:rgba(255,255,255,.2);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:30px 0;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#6dff7a;
+
+}
+
+#progressText{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+#searchMessage{
+
+    margin-top:30px;
+
+    min-height:80px;
+
+}
+
+/* ========================= */
+/* ИГРА С СЕРДЦЕМ */
+/* ========================= */
+
+#heartGame{
+
+    position:relative;
+
+    width:700px;
+    height:350px;
+
+    margin-top:30px;
+
+    border:2px dashed rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+}
+
+#heart{
+
+    position:absolute;
+
+    left:300px;
+    top:140px;
+
+    font-size:55px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.25s;
+
+}
+
+#heart:hover{
+
+    transform:scale(1.2);
+
+}
+
+#heartCounter{
+
+    margin-top:25px;
+
+    font-size:28px;
+
+}
+
+/* ========================= */
+/* ЭКРАН 7 */
+/* ========================= */
+
+#screen7 input{
+
+    margin-top:35px;
+
+    width:320px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    outline:none;
+
+    font-size:22px;
+
+    text-align:center;
+
+    background:white;
+
+    color:#222;
+
+    transition:.25s;
+
+}
+
+#screen7 input:focus{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+
+}
+
+#checkCodeBtn{
+
+    margin-top:25px;
+
+}
+
+#codeMessage{
+
+    min-height:40px;
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}

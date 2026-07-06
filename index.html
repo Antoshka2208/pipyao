@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Для тебя ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Небо -->
+    <div id="sky"></div>
+
+    <!-- ========================= -->
+    <!-- Экран 1 -->
+    <!-- ========================= -->
+
+    <section id="screen1" class="screen active">
+
+        <h1>Привет ❤️</h1>
+
+        <p>
+            Я сделал для тебя небольшой сюрприз.<br>
+            Надеюсь, он тебе понравится 😊
+        </p>
+
+        <button id="startBtn">
+            Начать ✨
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Экран 2 -->
+    <!-- ========================= -->
+
+    <section id="screen2" class="screen">
+
+        <h1>⚠️ Внимание</h1>
+
+        <p>
+            Во время прохождения сайта<br>
+            запрещается закрывать вкладку!!
+        </p>
+
+        <div class="buttonBox">
+
+            <button id="okBtn">
+                Хорошо ❤️
+            </button>
+
+            <button id="closeBtn">
+                Закрыть сайт ❌
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Экран 3 -->
+    <!-- ========================= -->
+
+    <section id="screen3" class="screen">
+
+        <h1 id="messageTitle">...</h1>
+
+        <p id="messageText"></p>
+
+        <button id="nextBtn3" style="display:none;">
+            Продолжить →
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Экран 4 -->
+    <!-- ========================= -->
+
+    <section id="screen4" class="screen">
+
+        <h1 class="gift">🎁</h1>
+
+        <p>
+            Подарок уже совсем рядом...<br><br>
+
+            Но открывать его пока рано.<br><br>
+
+            Давай сначала создадим праздничное настроение ✨
+        </p>
+
+        <button id="nextBtn4">
+            Поехали ❤️
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Экран 5 -->
+    <!-- ========================= -->
+
+    <section id="screen5" class="screen">
+
+        <h1>🔍 Поиск подарка...</h1>
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+        <p id="progressText">
+            0%
+        </p>
+
+        <p id="searchMessage"></p>
+
+        <button id="nextBtn5" style="display:none;">
+            Продолжить →
+        </button>
+
+    </section>
+
+    <!-- Экран 6 -->
+
+<section id="screen6" class="screen">
+
+    <h1>❤️</h1>
+
+    <p>
+        Чтобы получить подарок,<br>
+        поймай сердечко 5 раз 😊
+    </p>
+
+    <div id="heartGame">
+
+        <div id="heart">
+            ❤️
+        </div>
+
+    </div>
+
+    <p id="heartCounter">
+        Поймано: 0 / 5
+    </p>
+
+    <button id="nextBtn6" style="display:none;">
+        Продолжить →
+    </button>
+
+</section>
+
+<!-- ========================= -->
+<!-- Экран 7 -->
+<!-- ========================= -->
+
+<section id="screen7" class="screen">
+
+    <h1>🔐 Секретный код</h1>
+
+    <p>
+        Остался последний шаг ❤️<br><br>
+
+        Введи секретный код.<br>
+        Я уверен, что ты догадаешься 😊
+    </p>
+
+    <input
+        id="codeInput"
+        type="text"
+        placeholder="Введите код..."
+        autocomplete="off"
+    >
+
+    <button id="checkCodeBtn">
+        Проверить ❤️
+    </button>
+
+    <p id="codeMessage"></p>
+
+</section>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
