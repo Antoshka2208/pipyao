@@ -397,3 +397,251 @@ button:hover{
     font-weight:bold;
 
 }
+
+/* ========================= */
+/* ЭКРАН 8 */
+/* ========================= */
+
+#screen8{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#finalText{
+
+    max-width:850px;
+
+    min-height:320px;
+
+    font-size:26px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+}
+
+#giftBtn{
+
+    display:none;
+
+    opacity:0;
+
+    transform:translateY(30px) scale(.9);
+
+}
+
+#giftBtn.show{
+
+    display:inline-block;
+
+    animation:showGift .7s forwards;
+
+}
+
+@keyframes showGift{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px) scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ========================= */
+/* ПОЗДРАВЛЕНИЕ */
+/* ========================= */
+
+#finalCongrats{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.6s;
+
+    z-index:9999;
+
+}
+
+#finalCongrats.show{
+
+    opacity:1;
+
+}
+
+#finalCongrats h1{
+
+    font-size:72px;
+
+    animation:pop .8s;
+
+}
+
+#finalCongrats p{
+
+    margin-top:20px;
+
+    font-size:30px;
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.2);
+
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ========================= */
+/* КОНФЕТТИ */
+/* ========================= */
+
+.confetti{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    top:-20px;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:translateY(120vh) rotate(900deg);
+
+    }
+
+}
+/* ========================= */
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* ========================= */
+
+@media (max-width: 700px){
+
+    h1{
+
+        font-size:40px;
+
+    }
+
+    p{
+
+        font-size:20px;
+
+    }
+
+    button{
+
+        font-size:18px;
+
+        padding:14px 28px;
+
+    }
+
+    #heartGame{
+
+        width:95vw;
+
+        height:280px;
+
+    }
+
+    #screen7 input{
+
+        width:90%;
+
+        max-width:320px;
+
+    }
+
+    .buttonBox{
+
+        width:100%;
+
+        height:170px;
+
+    }
+
+    #okBtn{
+
+        left:50%;
+        transform:translateX(-50%);
+        top:0;
+
+    }
+
+    #closeBtn{
+
+        left:50%;
+        transform:translateX(-50%);
+        top:80px;
+
+    }
+
+    #finalText{
+
+        font-size:21px;
+
+        min-height:240px;
+
+    }
+
+}
