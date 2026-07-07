@@ -252,9 +252,8 @@ button:hover{
 
 .progress{
 
-    width:420px;
-
-    height:24px;
+    width:min(420px, 90vw);
+    height:20px;
 
     background:rgba(255,255,255,.2);
 
@@ -262,7 +261,7 @@ button:hover{
 
     overflow:hidden;
 
-    margin:30px 0;
+    margin:25px 0;
 
 }
 
