@@ -45,6 +45,9 @@ const giftBtn =
     const finalScreenBtn =
     document.getElementById("finalScreenBtn");
 
+const bgMusic =
+    document.getElementById("bgMusic");
+
 // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 // СЮДА ПОТОМ ВПИШЕШЬ СВОЙ СЕКРЕТНЫЙ КОД
 const SECRET_CODE = "Кардибалет";
@@ -514,6 +517,8 @@ giftBtn.addEventListener("click", function () {
 
     document.getElementById("finalCongrats")
         .classList.add("show");
+
+        bgMusic.play();
 
     createConfetti();
 
